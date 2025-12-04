@@ -1,15 +1,14 @@
-# aws-lambda-file-server
+# Serverless File Sharing Platform – Step-by-Step Guide
 Serverless file server using AWS Lambda + API Gateway (Free Tier)
-# Serverless File Sharing Platform
 
-## 📖 Overview
+### Overview
 This project demonstrates how to build a **serverless file sharing system** using AWS services.  
 It enables users to upload and download files securely through a lightweight HTTP interface.  
 The solution combines **Amazon S3** for storage, **AWS Lambda** for compute, and **API Gateway** for API management which ensures scalability, durability, and simplicity.
 
 ---
 
-## 🎯 Key Features
+### Key Features
 - **Secure Uploads**: Store files directly in S3 with controlled access.  
 - **Easy Downloads**: Retrieve files via simple GET requests.  
 - **Scalable Architecture**: Serverless design that grows automatically with demand.  
@@ -17,7 +16,7 @@ The solution combines **Amazon S3** for storage, **AWS Lambda** for compute, and
 
 ---
 
-## 🏗️ Architecture
+### Architecture
 The platform consists of three main components:
 1. **Amazon S3** → Stores uploaded files.  
 2. **AWS Lambda** → Handles upload and download logic.  
@@ -27,7 +26,7 @@ The platform consists of three main components:
 
 ---
 
-## Prerequisites
+### Prerequisites
 - An AWS account with permissions for S3, Lambda, and API Gateway.  
 - Basic knowledge of AWS CLI or Console.  
 
