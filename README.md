@@ -22,7 +22,7 @@ The platform consists of three main components:
 2. **AWS Lambda** → Handles upload and download logic.  
 3. **API Gateway** → Provides REST endpoints for client interaction.  
 
-*docs/Architecture.png*
+![Architecture Diagram](docs/Architecture.png)
 
 ---
 
