@@ -102,7 +102,7 @@ image/*
 ### Step 6: Testing the File Upload and Download
 Once your API Gateway and Lambda integration is deployed, you can test the functionality by uploading and downloading files. You can use either **Postman** or the **cURL utility**.
 
- i. **Upload a File**
+  ***i. Upload a File***
 
 #### Using Postman
 1. Open Postman and create a new request.  
@@ -120,7 +120,7 @@ curl --location 'https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?f
 --form 'file=@"/C:/Users/hp/Desktop/hello.txt"'
 ```
 
- **ii. Download a File**
+  ***ii. Download a File***
 
 You can verify that the file was uploaded correctly by downloading it back from the API.
 
@@ -138,17 +138,16 @@ curl --location 'https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?f
 ```
 
 ### Step 7: Frontend Deployment (Optional)
-
 You can host a simple HTML/JavaScript frontend on **Amazon S3** to interact with your API Gateway + Lambda file server.
 
-### 1. Create S3 Bucket
+#### 1. Create S3 Bucket
 - Go to **AWS Console → S3 → Create bucket**.
 - Choose a unique name (e.g., `file-server-frontend-bucket`) and same region as your API.
 - Enable **Static website hosting** in bucket **Properties**.
 - Set **Index document** to `index.html`.
 
 
-### 2. Upload Frontend Files
+#### 2. Upload Frontend Files
 - Upload your `index.html` (and any CSS/JS files).
 - Make objects publicly readable (bucket policy or object permissions).
 - Bucket policy for public read:
@@ -166,11 +165,10 @@ You can host a simple HTML/JavaScript frontend on **Amazon S3** to interact with
     ]
   }
 
-### 3. API Integration for Frontend
+#### 3. API Integration for Frontend
+Make sure your API Gateway is configured correctly before testing the frontend.
 
-Make sure your API Gateway is configured correctly before testing the frontend:
-
-### Method Response Headers
+##### Method Response Headers
 
 #### For `GET /files`
 - Status: `200`
@@ -191,7 +189,7 @@ Make sure your API Gateway is configured correctly before testing the frontend:
   - `Access-Control-Allow-Methods`
   - `Access-Control-Allow-Origin`
 
-### Integration Response Headers (OPTIONS → 200)
+#### Integration Response Headers (OPTIONS → 200)
 Map the following headers:
 ```text
 method.response.header.Access-Control-Allow-Headers: 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'
@@ -199,7 +197,7 @@ method.response.header.Access-Control-Allow-Methods: 'GET,OPTIONS,POST'
 method.response.header.Access-Control-Allow-Origin: '*'
 ```
 
-### 4. Connect Frontend to API
+#### 4. Connect Frontend to API
 - In your `index.html`, set the API base URL:
   ```javascript
   const API_BASE = "https://<api-id>.execute-api.<region>.amazonaws.com/dev/files";
@@ -210,13 +208,13 @@ method.response.header.Access-Control-Allow-Origin: '*'
   - **GET** requests for file downloads.
 ---
 
-### 5. Test Frontend
+#### 5. Test Frontend
 - Open the **Static website hosting URL** (e.g., `http://<your-bucket-name>.s3-website-<region>.amazonaws.com`).
 - Use the **Upload card** to select and send a file.
 - Use the **Download card** to enter a file name (e.g., `test.txt`) and verify the content is returned.
 ---
 
-### 6. Troubleshooting:
+#### 6. Troubleshooting:
 - Common errors:
 - {"message":"Missing Authentication Token"} → wrong path or method.
 - CORS errors → missing OPTIONS headers.
