@@ -105,7 +105,7 @@ Once your API Gateway and Lambda integration is deployed, you can test the funct
 
 <b>i. Upload a File</b>
 
- - Using Postman:
+#### Using Postman:
 1. Open Postman and create a new request.  
 2. Set the **method** to `POST`.  
 3. Enter the URL in the format: `https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?fileName=hello.txt`
