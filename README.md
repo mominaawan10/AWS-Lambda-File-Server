@@ -111,8 +111,8 @@ Once your API Gateway and Lambda integration is deployed, you can test the funct
 3. Enter the URL in the format: `https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?fileName=hello.txt`
 4. Go to the Body tab → select `form-data`.
 5. Add a key-value pair:
- - Key: file (type = File)
- - Value: Select your file (e.g., hello.txt)
+   - Key: file (type = File)
+   - Value: Select your file (e.g., hello.txt)
 6. Send the request. The file will be uploaded to your S3 bucket.
 
 #### Using cURL:
@@ -120,7 +120,7 @@ Once your API Gateway and Lambda integration is deployed, you can test the funct
 curl --location 'https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?fileName=hello.txt' \
 --form 'file=@"/C:/Users/hp/Desktop/hello.txt"'
 ```
-✅ If successful, you will see Status: 200 OK and a confirmation message in the response.
+- ✅ If successful, you will see Status: 200 OK and a confirmation message in the response.
 
   ***ii. Download a File***
 
@@ -129,8 +129,8 @@ curl --location 'https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?f
 2. Set the **method** to `GET`.  
 3. Enter the URL in the format: `https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?fileName=hello.txt`
 4. Go to the Params tab and confirm:
-  - Key: fileName
-  - Value: hello.txt
+   - Key: fileName
+   - Value: hello.txt
 5. Leave the Body tab set to `none`.
 6. Send the request.  
 7. The response should return the file content you uploaded (e.g., `Hello World!`).
@@ -139,7 +139,7 @@ curl --location 'https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?f
 ```bash
 curl --location 'https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?fileName=hello.txt'
 ```
-- If successful, you will see Status: 200 OK and the file content in the response.
+- ✅ If successful, you will see Status: 200 OK and the file content in the response.
   
 ---
 
