@@ -1,7 +1,6 @@
 import json
 import boto3
 import base64
-from io import BytesIO
 from email import message_from_bytes
 
 s3 = boto3.client('s3')
