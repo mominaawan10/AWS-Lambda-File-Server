@@ -222,7 +222,7 @@ method.response.header.Access-Control-Allow-Origin: '*'
 - Then use the **Download card** to download a specific file (e.g., `test.txt`) and verify that the correct content is returned.
 
 #### 6. Troubleshooting:
-- Common errors:
+Common errors:
 - {"message":"Missing Authentication Token"} → wrong path or method.
 - CORS errors → missing OPTIONS headers.
 - 403 Forbidden → bucket policy not set.
